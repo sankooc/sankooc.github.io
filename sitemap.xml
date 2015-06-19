@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://yoursite.com/blog/2015/06/19/ahah3/</loc>
+    <lastmod>2015-06-19T14:34:20+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/blog/2015/06/19/ahah1/</loc>
+    <lastmod>2015-06-19T14:34:16+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/blog/2015/06/19/ahah/</loc>
+    <lastmod>2015-06-19T12:27:12+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/blog/archives/</loc>
+  </url>
+  <url>
+    <loc>http://yoursite.com/</loc>
+  </url>
+  <url>
+    <loc>http://yoursite.com/blog/categories/</loc>
+  </url>
+</urlset>
