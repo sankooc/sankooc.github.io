@@ -53,7 +53,7 @@ angular.module("app",['ui.router','angular-loading-bar'])
   inx = ($scope.page-1)*per
   converter = new showdown.Converter()
   IssueService.load(true).then (data)->
-    console.log data
+    # console.log data
     _.each data.issues, (issue)->
       if $scope.blogs.length >= per
         return
@@ -77,12 +77,10 @@ angular.module("app",['ui.router','angular-loading-bar'])
     _.each data.issues, (issue,index,arr)->
       if issue.milestone.title is 'blog'
         if issue.id is parseInt id
-          console.log(issue)
           $scope.blog = issue
           $scope.body = converter.makeHtml issue.body
           if arr.length >= index+2
             $scope.next = arr[index+1]
-            console.log $scope.next
           return
 .controller 'ArchivesController',($scope,IssueService)->
   $scope.blogs = []

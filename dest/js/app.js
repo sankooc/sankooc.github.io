@@ -60,7 +60,6 @@
     inx = ($scope.page - 1) * per;
     converter = new showdown.Converter();
     IssueService.load(true).then(function(data) {
-      console.log(data);
       return _.each(data.issues, function(issue) {
         var body, content;
         if ($scope.blogs.length >= per) {
@@ -97,12 +96,10 @@
       return _.each(data.issues, function(issue, index, arr) {
         if (issue.milestone.title === 'blog') {
           if (issue.id === parseInt(id)) {
-            console.log(issue);
             $scope.blog = issue;
             $scope.body = converter.makeHtml(issue.body);
             if (arr.length >= index + 2) {
               $scope.next = arr[index + 1];
-              console.log($scope.next);
             }
           }
         }
