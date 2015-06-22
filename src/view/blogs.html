@@ -1,0 +1,32 @@
+<div id="content">
+  <div class="blog-index">
+    <article ng-repeat="blog in blogs">
+      <header>
+        <h1 class="entry-title">
+          <a ng-bind="::blog.title"></a>
+        </h1>
+        <p class="meta">
+          <time class='entry-date' datetime='2015-06-19T14:34:20+08:00'>
+            <span class='date' ng-bind="::blog.created_at | date :'yyyy-MM-dd hh:mm'">
+            </span> 
+        </p>
+      </header>
+      <div class="entry-content" ng-bind-html="::blog.trim.html|htmlSafe">
+      </div>
+      <footer ng-if="blog.trim.more">
+        <a rel="full-article" ui-sref="blog({id:blog.id})">Read on →</a>
+      </footer>
+    </article>
+    <div class="pagination">
+
+      <a class="prev" ui-sref="blogs({page:page+1})">← Older</a>
+
+      <a ui-sref="archives">Blog Archives</a>
+
+      <a class="next" ng-if="page>1" ui-sref="blogs({page:page-1})">Newer →</a>
+
+    </div>
+  </div>
+  <aside class="sidebar">
+  </aside>
+</div>

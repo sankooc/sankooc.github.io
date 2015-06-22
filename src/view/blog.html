@@ -1,0 +1,30 @@
+<div id="content">
+  <div>
+    <article class="hentry" role="article">
+      <header>
+        <h1 class="entry-title" ng-bind="::blog.title"></h1>
+        <p class="meta">
+          <time class='entry-date' ng-bind="::blog.updated_at"></time>
+        </p>
+    
+      </header>
+
+
+      <div class="entry-content" ng-bind-html="::body|htmlSafe">
+      </div>
+
+
+      <footer>
+        <p class="meta">
+          <span class="byline author vcard">Authored by <span class="fn" ng-bind="::blog.user.login"></span></span>
+          <time class='entry-date' ng-bind="::blog.updated_at|date:'MMM dd, yyyy hh:mm'"></time>
+        </p>
+        
+        <p class="meta">
+          <a class="basic-alignment right" ui-sref="blog({id:next.id})" title="Next Post: {{::next.title}}" ng-bind="::next.title"></a>
+        </p>
+      </footer>
+    </article>
+  </div>
+
+</div>
