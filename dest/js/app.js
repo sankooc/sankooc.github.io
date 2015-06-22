@@ -1,5 +1,5 @@
 (function() {
-  angular.module("app", ['ui.router', 'angular-loading-bar']).config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
+  angular.module("app", ['ui.router', 'angular-loading-bar']).config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvider, $anchorScrollProvider) {
     var prefix;
     cfpLoadingBarProvider.includeBar = true;
     prefix = 'src/';
@@ -60,7 +60,7 @@
     inx = ($scope.page - 1) * per;
     converter = new showdown.Converter();
     IssueService.load(true).then(function(data) {
-      return _.each(data.issues, function(issue) {
+      return _.each(data.issues, function(issue, index, arr) {
         var body, content;
         if ($scope.blogs.length >= per) {
           return;
@@ -75,7 +75,12 @@
           issue.trim = trimHtml(content, {
             limit: 200
           });
-          return $scope.blogs.push(issue);
+          $scope.blogs.push(issue);
+          if (arr.length - 1 > index) {
+            return $scope.hasMore = true;
+          } else {
+            return $scope.hasMore = false;
+          }
         }
       });
     });
@@ -86,8 +91,9 @@
         limit: 200
       });
     };
-  }).controller('BlogController', function($scope, IssueService, $stateParams) {
+  }).controller('BlogController', function($scope, IssueService, $stateParams, $window) {
     var converter, id, issues;
+    $window.scrollTo(0, 0);
     converter = new showdown.Converter();
     id = $stateParams.id;
     issues = null;

@@ -1,5 +1,6 @@
 angular.module("app",['ui.router','angular-loading-bar'])
-.config ($stateProvider, $urlRouterProvider,cfpLoadingBarProvider)->
+.config ($stateProvider, $urlRouterProvider,cfpLoadingBarProvider,$anchorScrollProvider)->
+  # $anchorScrollProvider.disableAutoScrolling()
   cfpLoadingBarProvider.includeBar = true
   prefix = 'src/'
   $stateProvider
@@ -53,8 +54,7 @@ angular.module("app",['ui.router','angular-loading-bar'])
   inx = ($scope.page-1)*per
   converter = new showdown.Converter()
   IssueService.load(true).then (data)->
-    # console.log data
-    _.each data.issues, (issue)->
+    _.each data.issues, (issue,index,arr)->
       if $scope.blogs.length >= per
         return
       if issue.milestone.title is 'blog'
@@ -65,10 +65,16 @@ angular.module("app",['ui.router','angular-loading-bar'])
         content = converter.makeHtml body
         issue.trim = trimHtml(content,{limit:200})
         $scope.blogs.push issue
+        if arr.length-1 > index
+          $scope.hasMore = true
+        else
+          $scope.hasMore = false
+    
   $scope.toHtml = (body)->
     content = converter.makeHtml body
     trimHtml(content,{limit:200})
-.controller 'BlogController',($scope,IssueService,$stateParams)->
+.controller 'BlogController',($scope,IssueService,$stateParams,$window)->
+  $window.scrollTo(0, 0)
   converter = new showdown.Converter()
   id = $stateParams.id
   issues = null

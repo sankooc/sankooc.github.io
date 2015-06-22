@@ -17,11 +17,11 @@
   
 </head>
 
-  <body class="collapse-sidebar sidebar-footer">
+  <body class="collapse-sidebar sidebar-footer" id="top">
     
     <header role="banner">
       <hgroup>
-        <h1><a href="/">{{title}}'s DevLog</a></h1>
+        <h1><a ui-sref="blogs({page:1})">{{title}}'s DevLog</a></h1>
         <h2>the developer</h2>
       </hgroup>
     </header>
@@ -35,7 +35,7 @@
       </form>
   
       <ul class="main-navigation">
-        <li><a ui-sref="blogs">Blog</a></li>
+        <li><a ui-sref="blogs({page:1})">Blog</a></li>
         <li><a ui-sref="archives">Archives</a></li>
         <li><a ui-sref="resume">About Me</a></li>
       </ul>

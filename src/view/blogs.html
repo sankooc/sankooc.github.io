@@ -19,7 +19,7 @@
     </article>
     <div class="pagination">
 
-      <a class="prev" ui-sref="blogs({page:page+1})">← Older</a>
+      <a class="prev" ng-if="hasMore" ui-sref="blogs({page:page+1})">← Older</a>
 
       <a ui-sref="archives">Blog Archives</a>
 
