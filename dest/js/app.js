@@ -133,13 +133,11 @@
       });
       return $scope.years = Object.keys(map);
     });
-  }).filter('htmlSafe', [
-    '$sce', function($sce) {
-      return function(text) {
-        return $sce.trustAsHtml(text);
-      };
-    }
-  ]);
+  }).filter('htmlSafe', function($sce) {
+    return function(text) {
+      return $sce.trustAsHtml(text);
+    };
+  });
 
 }).call(this);
 

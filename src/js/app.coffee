@@ -104,7 +104,6 @@ angular.module("app",['ui.router','angular-loading-bar'])
       _s1.push blog
     $scope.years = Object.keys map
     
-.filter('htmlSafe', ['$sce', ($sce)->
+.filter 'htmlSafe',($sce)->
   (text)->
     $sce.trustAsHtml(text)
-])

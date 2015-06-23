@@ -48,6 +48,12 @@ module.exports = function (grunt) {
         main: {
           files: _files
         }
+        ,img:{
+          expand: true,
+          cwd: 'src/img/',
+          src: '**', 
+          dest: 'dest/img/'
+        }
       }
 
       ,less: {
