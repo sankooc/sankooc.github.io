@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="app">
+  <head>
+    <title>Hi I'm Sankooc</title>
+    <meta name="author" content="Sankooc">
+    <meta name="description" content="blog">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://sankooc.github.io">
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="dest/css/main.css" type="text/css">
+    <link rel="stylesheet" href="dest/css/screen.css" type="text/css">
+    <link rel="stylesheet" href="dest/vendor/angular-loading-bar/build/loading-bar.css" type="text/css">
+  </head>
+  <body id="top" class="collapse-sidebar sidebar-footer">
+    <header role="banner">
+      <hgroup>
+        <h1><a ui-sref="blogs({page:1})">sankooc's DevLog</a></h1>
+        <h2>the developer</h2>
+      </hgroup>
+    </header>
+    <nav role="navigation">
+      <form action="https://www.baidu.com/s" method="get">
+        <fieldset role="search">
+          <input type="hidden" name="sitesearch" value="sankooc.github.io">
+          <input type="text" name="wd" results="0" placeholder="Search" class="search">
+        </fieldset>
+      </form>
+      <ul class="main-navigation">
+        <li><a ui-sref="blogs({page:1})">Blog</a></li>
+        <li><a ui-sref="archives">Archives</a></li>
+        <li><a href="https://github.com/sankooc">Github</a></li>
+      </ul>
+    </nav>
+    <div id="main" ui-view class="view_content"></div>
+    <footer role="contentinfo">
+      <p>Copyright &copy; 2015 - Sankooc</p>
+    </footer>
+    <script src="dest/vendor/jquery/dist/jquery.js"></script>
+    <script src="dest/vendor/angular/angular.js"></script>
+    <script src="dest/vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="dest/vendor/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="dest/vendor/underscore/underscore.js"></script>
+    <script src="dest/vendor/moment/moment.js"></script>
+    <script src="dest/vendor/gh3/gh3.js"></script>
+    <script src="dest/vendor/showdown/dist/showdown.js"></script>
+    <script src="dest/js/vendor.js"></script>
+    <script src="dest/js/app.js"></script>
+  </body>
+</html>
