@@ -1,0 +1,12 @@
+#content
+  div
+    article(role='article')
+      header
+        h1.entry-title Blog Archive
+      #blog-archives(ng-repeat='y in years')
+        h2(ng-bind='::y')
+        article(ng-repeat='blog in map[y]')
+          h1
+            a(ui-sref='blog({id:blog.id})', ng-bind='::blog.title')
+          time(ng-bind="blog.updated_at | date:'MMM dd'")
+aside.sidebar

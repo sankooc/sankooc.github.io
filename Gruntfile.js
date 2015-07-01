@@ -2,7 +2,7 @@
 
 module.exports = function (grunt) {
   var path = require('path');
-  
+
   var dep = [
     'src/vendor/js/*.js'
   ];
@@ -17,16 +17,16 @@ module.exports = function (grunt) {
     {
       expand: true,
       cwd: 'bower_components/',
-      src: '**', 
+      src: '**',
       dest: 'dest/vendor/'
     },{
       expand: true,
       cwd: 'src/css/',
-      src: '**', 
+      src: '*.css',
       dest: 'dest/css/'
     }
   ];
-  
+
   var _vendor = {
     src:[],
     dest: 'dependence.js'
@@ -47,11 +47,16 @@ module.exports = function (grunt) {
       ,copy: {
         main: {
           files: _files
+        },
+        inx: {
+          files: {
+            'index.html': 'dest/view/index.html'
+          }
         }
         ,img:{
           expand: true,
           cwd: 'src/img/',
-          src: '**', 
+          src: '**',
           dest: 'dest/img/'
         }
       }
@@ -79,7 +84,7 @@ module.exports = function (grunt) {
           }
         }
       }
-      
+
       ,coffee: {
         compile: {
           options: {
@@ -97,6 +102,19 @@ module.exports = function (grunt) {
           dest: 'dest/html2js.js'
         }
       }
+      ,jade: {
+        compile: {
+          options: {
+            pretty: true
+          },
+          expand: true,
+          cwd: 'src/template',
+          src: '*.jade',
+          dest: 'dest/view',
+          ext: '.html'
+        }
+      }
+
 
       ,'http-server':{
         dev: {
@@ -117,9 +135,9 @@ module.exports = function (grunt) {
       }
 
       , watch: {
-        html : {
-          files:'src/main.html',
-          task : ['copy:main']
+        jade : {
+          files: 'src/template/*.jade',
+          tasks: 'jade:compile'
         },
         html2js : {
           files:'src/view/*.html',
@@ -150,6 +168,7 @@ module.exports = function (grunt) {
 // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-concat-sourcemap');
+  grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-html2js');
@@ -158,7 +177,7 @@ module.exports = function (grunt) {
 
 // Default task.
   // grunt.registerTask('build', ['copy','less', 'concat_sourcemap','coffee', 'html2js','http-server','watch']);
-  grunt.registerTask('build', ['copy','less', 'concat_sourcemap','coffee','http-server','watch']);
+  grunt.registerTask('build', ['copy','less','jade', 'concat_sourcemap','coffee','http-server','watch']);
   grunt.registerTask('default', ['build']);
 }
 ;

@@ -1,0 +1,18 @@
+#content
+	.blog-index
+		article(ng-repeat="blog in blogs")
+			header
+				h1.entry-title
+					a(ng-bind="::blog.title")
+				p.meta
+					time.entry-date
+						span.date(ng-bind="::blog.created_at | date :'yyyy-MM-dd hh:mm'")
+			.entry-content(ng-bind-html="::blog.trim.html|htmlSafe")
+			footer(ng-if="blog.trim.more")
+				a(rel="full-article" ui-sref="blog({id:blog.id})") Read on →
+		.pagination
+			a.prev(ng-if="hasMore" ui-sref="blogs({page:page+1})") ← Older
+			
+			a(ui-sref="archives") Blog Archives
+			
+			a.next(ng-if!="page>1" ui-sref="blogs({page:page-1})") Newer →

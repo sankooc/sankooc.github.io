@@ -2,7 +2,7 @@
   angular.module("app", ['ui.router', 'angular-loading-bar']).config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvider, $anchorScrollProvider) {
     var prefix;
     cfpLoadingBarProvider.includeBar = true;
-    prefix = 'src/';
+    prefix = 'dest/';
     $stateProvider.state('blogs', {
       url: '/blogs/:page',
       controller: 'BlogsController',
@@ -97,7 +97,7 @@
     converter = new showdown.Converter();
     id = $stateParams.id;
     issues = null;
-    return IssueService.load().then(function(data) {
+    return IssueService.load(true).then(function(data) {
       issues = data;
       return _.each(data.issues, function(issue, index, arr) {
         if (issue.milestone.title === 'blog') {
@@ -131,7 +131,8 @@
         _s1 = map[y];
         return _s1.push(blog);
       });
-      return $scope.years = Object.keys(map);
+      $scope.years = Object.keys(map);
+      return console.log($scope.map);
     });
   }).filter('htmlSafe', function($sce) {
     return function(text) {

@@ -1,23 +1,18 @@
+
 <div id="content">
   <div>
-    
     <article role="article">
       <header>
         <h1 class="entry-title">Blog Archive</h1>
-    
       </header>
-  
       <div id="blog-archives" ng-repeat="y in years">
         <h2 ng-bind="::y"></h2>
         <article ng-repeat="blog in map[y]">
           <h1><a ui-sref="blog({id:blog.id})" ng-bind="::blog.title"></a></h1>
-          <time ng-bind="blog.updated_at | date:'MMM dd'">
-          </time>
+          <time ng-bind="blog.updated_at | date:'MMM dd'"></time>
         </article>
       </div>
     </article>
   </div>
-
-  <aside class="sidebar">
-  </aside>
 </div>
+<aside class="sidebar"></aside>

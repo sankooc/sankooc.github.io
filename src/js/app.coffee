@@ -1,8 +1,7 @@
 angular.module("app",['ui.router','angular-loading-bar'])
 .config ($stateProvider, $urlRouterProvider,cfpLoadingBarProvider,$anchorScrollProvider)->
-  # $anchorScrollProvider.disableAutoScrolling()
   cfpLoadingBarProvider.includeBar = true
-  prefix = 'src/'
+  prefix = 'dest/'
   $stateProvider
   .state 'blogs', {
     url: '/blogs/:page'
@@ -31,7 +30,7 @@ angular.module("app",['ui.router','angular-loading-bar'])
     q = $q.defer()
     repo.fetchIssues (err,data)->
       cfpLoadingBar.complete()
-      if err 
+      if err
         q.reject err
       else
         cache = data
@@ -69,7 +68,7 @@ angular.module("app",['ui.router','angular-loading-bar'])
           $scope.hasMore = true
         else
           $scope.hasMore = false
-    
+
   $scope.toHtml = (body)->
     content = converter.makeHtml body
     trimHtml(content,{limit:200})
@@ -78,7 +77,7 @@ angular.module("app",['ui.router','angular-loading-bar'])
   converter = new showdown.Converter()
   id = $stateParams.id
   issues = null
-  IssueService.load().then (data)->
+  IssueService.load(true).then (data)->
     issues = data
     _.each data.issues, (issue,index,arr)->
       if issue.milestone.title is 'blog'
@@ -103,7 +102,8 @@ angular.module("app",['ui.router','angular-loading-bar'])
       _s1 = map[y]
       _s1.push blog
     $scope.years = Object.keys map
-    
+    console.log $scope.map
+
 .filter 'htmlSafe',($sce)->
   (text)->
     $sce.trustAsHtml(text)
