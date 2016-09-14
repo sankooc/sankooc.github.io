@@ -1,0 +1,297 @@
+@import url("//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css");
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background: #ffffff;
+  color: #000000;
+  font-size: 30px;
+  line-height: 1;
+}
+ol {
+  list-style: none;
+}
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption {
+  font-weight: normal;
+  text-align: left;
+  vertical-align: middle;
+}
+td {
+  font-weight: normal;
+  text-align: left;
+  vertical-align: middle;
+}
+th {
+  font-weight: normal;
+  text-align: left;
+  vertical-align: middle;
+}
+a {
+  color: #eee6ab;
+  text-decoration: none;
+}
+a img {
+  border: none;
+}
+html {
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  background-color: #45484b;
+  color: #eee6ab;
+  height: 150px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.content {
+  background-color: #45484b;
+  color: #eee6ab;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 150px;
+  width: 100%;
+}
+.content .upanel {
+  padding-top: 50px;
+  width: 80%;
+  margin: auto;
+}
+.content .upanel .avatar {
+  width: 400px;
+  margin: auto;
+}
+.content .upanel .avatar img {
+  border-radius: 200px;
+  width: 100%;
+}
+.content .upanel .desc {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  text-align: center;
+  font-size: 1.8em;
+}
+.content .upanel .info {
+  font-size: 1.6em;
+}
+#project {
+  background-color: #696758;
+  color: #696758;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+#project h1 {
+  color: #c5bc8e;
+  font-size: 2.5em;
+  margin: 20px;
+}
+#project h1 p {
+  display: inline-block;
+  padding: 0 10px;
+}
+#skills {
+  background-color: #696758;
+  color: #696758;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 0;
+}
+#skills .tech {
+  color: #c5bc8e;
+  width: 49%;
+  display: inline-block;
+  padding: 0;
+  font-size: 1.8em;
+  margin: 0.4em 0;
+}
+#skills .tech span {
+  margin-right: 10px;
+}
+#skills h1 {
+  color: #c5bc8e;
+  font-size: 2.5em;
+  margin: 20px;
+}
+#skills h1 p {
+  display: inline-block;
+  padding: 0 10px;
+}
+#employment {
+  background-color: #c5bc8e;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+#employment h1 {
+  color: #696758;
+  font-size: 2.5em;
+  margin: 20px;
+}
+#employment h1 p {
+  display: inline-block;
+  padding: 0 10px;
+}
+#interests {
+  background-color: #c5bc8e;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+#interests h1 {
+  color: #696758;
+  font-size: 2.5em;
+  margin: 20px;
+}
+#interests h1 p {
+  display: inline-block;
+  padding: 0 10px;
+}
+#interests .contact {
+  font-size: 6em;
+  width: 80%;
+  margin: auto;
+  padding: 0;
+  padding-top: 200px;
+}
+#interests .contact a {
+  display: inline-block;
+  color: #696758;
+}
+.name {
+  font-size: 3em;
+  margin: 20px 0 0 20px;
+  padding: 0 10px;
+}
+.cv {
+  font-size: 2em;
+  margin: -22px 20px 0;
+  padding: 0 10px 20px;
+}
+.info {
+  color: #eee6ab;
+  margin: 10px 20px;
+}
+.address,
+.email,
+.pdf,
+.telephone,
+.website {
+  color: inherit;
+  display: inline-block;
+  margin: 5px;
+  text-align: left;
+}
+.address a,
+.email a,
+.pdf a,
+.telephone a,
+.website a {
+  color: inherit;
+}
+.scroll {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+  bottom: 20px;
+  filter: alpha(opacity=75);
+  font-size: 1.5em;
+  left: 50%;
+  margin-left: -50px;
+  opacity: 0.75;
+  position: fixed;
+  width: 200px;
+}
+.skillitems {
+  margin: 20px 50px;
+}
+.skilllist {
+  margin: 20px 50px;
+  max-width: 500px;
+  width: 75%;
+}
+.skill {
+  background-color: #c5bc8e;
+  margin: 5px;
+  width: 0;
+}
+.skill .skillname {
+  padding: 5px;
+  text-align: right;
+}
+.job {
+  color: #696758;
+  margin: 20px 50px;
+}
+.job .jobt {
+  font-size: 1.5em;
+}
+.job .company {
+  font-size: 1em;
+  margin-top: 10px;
+}
+.job .dates {
+  font-size: 1em;
+  margin-top: 10px;
+}
+.qualification {
+  color: #c5bc8e;
+  margin: 20px 50px;
+}
+.qualification .qual {
+  font-size: 1.5em;
+}
+.qualification .dates {
+  font-size: 1em;
+  margin-top: 10px;
+}
+.qualification .institute {
+  font-size: 1em;
+  margin-top: 10px;
+}
+.interestlist {
+  max-width: 750px;
+}
+.interest {
+  border: 2px solid;
+  color: #696758;
+  display: inline-block;
+  margin: 0 0 40px 50px;
+  padding: 10px;
+  text-align: center;
+  width: 150px;
+}
+.interest i {
+  font-size: 3em;
+}
+.interest p {
+  font-size: 1.5em;
+}

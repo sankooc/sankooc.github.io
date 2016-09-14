@@ -1,0 +1,303 @@
+@import url("//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css");
+// Color variables (appears count calculates by raw css)
+@color0: #696758; // Appears 8 times
+@color1: #c5bc8e; // Appears 6 times
+@color2: #eee6ab; // Appears 4 times
+@color3: #45484b; // Appears 2 times
+
+// Width variables (appears count calculates by raw css)
+@width4: 100%; // Appears 6 times
+
+// Height variables (appears count calculates by raw css)
+@height0: 100%; // Appears 5 times
+
+@headerheight: 150px;
+@main-font-size: 30px;
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 0;
+	box-sizing: border-box;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	vertical-align: baseline;
+}
+html, body {
+    height:100%;
+}
+body {
+	background: #ffffff;
+	color: #000000;
+	font-size: @main-font-size;
+	line-height: 1;
+}
+ol {
+	list-style: none;
+}
+ul {
+	list-style: none;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	vertical-align: middle;
+}
+caption {
+	font-weight: normal;
+	text-align: left;
+	vertical-align: middle;
+}
+td {
+	font-weight: normal;
+	text-align: left;
+	vertical-align: middle;
+}
+th {
+	font-weight: normal;
+	text-align: left;
+	vertical-align: middle;
+}
+a {
+	color: @color2;
+	text-decoration: none;
+	img {
+		border: none;
+	}
+}
+html {
+	font-family: 'Roboto', sans-serif;
+}
+header {
+	background-color: @color3;
+	color: @color2;
+	height: @headerheight;
+	position: fixed;
+	top: 0;
+	width: @width4;
+}
+.content {
+	background-color: @color3;
+	color: @color2;
+	height: @height0;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	top: @headerheight;
+	width: @width4;
+    .upanel{
+        padding-top: 50px;
+        width: 80%;
+        margin: auto;
+        .avatar{
+            width:400px;
+            margin:auto;
+            img{
+                border-radius: 200px;
+                width:100%;
+            }
+        }
+        .desc{
+            margin-top: 50px;
+            margin-bottom: 80px;
+            text-align: center;
+            font-size: 1.8em;
+        }
+        .info{
+            font-size: 1.6em;
+        }
+    }
+}
+#project {
+	background-color: @color0;
+	color: @color0;
+	height: @height0;
+	position: absolute;
+	top: 100%;
+	width: @width4;
+	h1 {
+		color: @color1;
+		font-size: 2.5em;
+		margin: 20px;
+		p {
+			display: inline-block;
+			padding: 0 10px;
+		}
+	}
+}
+#skills {
+	background-color: @color0;
+	color: @color0;
+	height: @height0;
+	position: absolute;
+	top: 100%;
+	width: @width4;
+    padding:0;
+    .tech {
+        color: @color1;
+        span{
+            margin-right: 10px;
+        }
+        width: 49%;
+        display: inline-block;
+        padding:0;
+        font-size: 1.8em;
+        margin: 0.4em 0;
+    }
+	h1 {
+		color: @color1;
+		font-size: 2.5em;
+		margin: 20px;
+		p {
+			display: inline-block;
+			padding: 0 10px;
+		}
+	}
+}
+#employment {
+	background-color: @color1;
+	height: @height0;
+	position: absolute;
+	top: 100%;
+	width: @width4;
+	h1 {
+		color: @color0;
+		font-size: 2.5em;
+		margin: 20px;
+		p {
+			display: inline-block;
+			padding: 0 10px;
+		}
+	}
+}
+#interests {
+	background-color: @color1;
+	height: @height0;
+	position: absolute;
+	top: 100%;
+	width: @width4;
+	h1 {
+		color: @color0;
+		font-size: 2.5em;
+		margin: 20px;
+		p {
+			display: inline-block;
+			padding: 0 10px;
+		}
+	}
+    .contact{
+        font-size: 6em;
+        width: 80%;
+        margin: auto;
+        padding: 0;
+        padding-top: 200px;
+        a{
+            display: inline-block;
+            color: #696758;
+        }
+    }
+}
+.name {
+	font-size: 3em;
+	margin: 20px 0 0 20px;
+	padding: 0 10px;
+}
+.cv {
+	font-size: 2em;
+	margin: -22px 20px 0;
+	padding: 0 10px 20px;
+}
+.info {
+	color: @color2;
+	margin: 10px 20px;
+}
+.address, .email, .pdf, .telephone, .website  {
+	color: inherit;
+	display: inline-block;
+	margin: 5px;
+	text-align: left;
+}
+.address a, .email a, .pdf a, .telephone a, .website a  {
+	color: inherit;
+}
+.scroll {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+	bottom: 20px;
+	filter: alpha(opacity=75);
+	font-size: 1.5em;
+	left: 50%;
+	margin-left: -50px;
+	opacity: 0.75;
+	position: fixed;
+	width: 200px;
+}
+.skillitems{
+	margin: 20px 50px;
+}
+
+.skilllist {
+	margin: 20px 50px;
+	max-width: 500px;
+	width: 75%;
+}
+.skill {
+	background-color: @color1;
+	margin: 5px;
+	width: 0;
+	.skillname {
+		padding: 5px;
+		text-align: right;
+	}
+}
+.job {
+	color: @color0;
+	margin: 20px 50px;
+	.jobt {
+		font-size: 1.5em;
+	}
+	.company {
+		font-size: 1em;
+		margin-top: 10px;
+	}
+	.dates {
+		font-size: 1em;
+		margin-top: 10px;
+	}
+}
+.qualification {
+	color: @color1;
+	margin: 20px 50px;
+	.qual {
+		font-size: 1.5em;
+	}
+	.dates {
+		font-size: 1em;
+		margin-top: 10px;
+	}
+	.institute {
+		font-size: 1em;
+		margin-top: 10px;
+	}
+}
+.interestlist {
+	max-width: 750px;
+}
+.interest {
+	border: 2px solid;
+	color: @color0;
+	display: inline-block;
+	margin: 0 0 40px 50px;
+	padding: 10px;
+	text-align: center;
+	width: 150px;
+	i {
+		font-size: 3em;
+	}
+	p {
+		font-size: 1.5em;
+	}
+}

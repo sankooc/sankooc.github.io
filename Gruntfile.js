@@ -66,9 +66,11 @@ module.exports = function (grunt) {
           options: {
             paths: ['src/css/include']
           },
-          files: {
-            'dest/css/main.css': 'src/css/*.less'
-          }
+          expand: true,
+          cwd: 'src/css',
+          src: '*.less',
+          dest: 'dest/css',
+          ext: '.css'
         }
       }
 
@@ -122,7 +124,7 @@ module.exports = function (grunt) {
           root: '.',
           port: 8001,
           // port: function() { return 8282; }
-          host: "127.0.0.1",
+          host: "0.0.0.0",
           cache: 1000,
           showDir : true,
           autoIndex: true,
