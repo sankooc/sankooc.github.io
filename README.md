@@ -1,1 +1,0 @@
-# sankooc.github.io
