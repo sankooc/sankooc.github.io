@@ -174,7 +174,7 @@ profile:
   enabled: true # Whether to show profile bar
   avatar: images/avatar.jpg
   gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
-  author: Sankooc
+  author: sankooc
   author_title: Fullstack Developer
   author_description: 莫待无花空折枝
   location: Beijing, China
@@ -184,7 +184,6 @@ profile:
     links:
       github: https://github.com/sankooc
       weibo: http://weibo.com/sankooc
-      twitter: https://twitter.com/sankooc
       weixin: sankooc
     link_tooltip: true # enable the social link tooltip, options: true, false
   # My Skills 
@@ -202,12 +201,7 @@ profile:
     - 全栈
     - node开发
     - 代码重构
-  # My Personal Works
-  works:
-    name:
-      link: http://www.example.com
-      date: 2016
   # My Personal Projects
   projects:
-    cofess/gulp-startpro: https://github.com/cofess/gulp-startpro
-    cofess/hexo-theme-pure: https://github.com/cofess/hexo-theme-pure
+    sankooc/wow-interface-prist: https://github.com/sankooc/wow-interface-prist
+    sankooc/springJs: https://github.com/sankooc/spring.js
